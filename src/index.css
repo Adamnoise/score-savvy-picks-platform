@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +7,7 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --background-rgb: 255, 255, 255;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -54,6 +56,7 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
+    --background-rgb: 10, 10, 10;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -97,5 +100,23 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .bg-linear-to-r {
+    background: linear-gradient(to right, var(--tw-gradient-stops));
+  }
+
+  .bg-linear-to-l {
+    background: linear-gradient(to left, var(--tw-gradient-stops));
   }
 }
