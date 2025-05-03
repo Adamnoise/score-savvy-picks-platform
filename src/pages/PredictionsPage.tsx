@@ -1,9 +1,11 @@
 
+"use client";
+
 import { PredictionDashboard } from "@/components/ui/prediction-dashboard";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
-const Index = () => {
+export default function PredictionsPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { toast } = useToast();
   
@@ -105,32 +107,16 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm py-4">
-        <div className="container mx-auto px-4">
-          <h1 className="text-2xl font-bold text-center md:text-left">Score Savvy Picks Platform</h1>
-        </div>
-      </header>
-      
-      <main className="container mx-auto p-4">
-        <PredictionDashboard 
-          initialMatches={sampleMatches}
-          initialStats={userStats}
-          isLoggedIn={isLoggedIn}
-          onLogin={handleLogin}
-          onRegister={handleRegister}
-          onPredictionSubmit={handlePredictionSubmit}
-          onExport={handleExport}
-        />
-      </main>
-      
-      <footer className="bg-gray-100 py-6 mt-12">
-        <div className="container mx-auto px-4 text-center text-gray-600">
-          <p>© 2025 Score Savvy Picks Platform. All rights reserved.</p>
-        </div>
-      </footer>
+    <div className="container py-8">
+      <PredictionDashboard 
+        initialMatches={sampleMatches}
+        initialStats={userStats}
+        isLoggedIn={isLoggedIn}
+        onLogin={handleLogin}
+        onRegister={handleRegister}
+        onPredictionSubmit={handlePredictionSubmit}
+        onExport={handleExport}
+      />
     </div>
   );
-};
-
-export default Index;
+}
