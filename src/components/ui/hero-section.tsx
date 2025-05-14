@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -55,11 +54,11 @@ export function HeroSection() {
                 }}
               >
                 <motion.h1 className="text-balance text-4xl font-medium sm:text-5xl md:text-6xl">
-                  Expert Sports Betting Analysis
+                  Professional Football Predictions
                 </motion.h1>
 
                 <motion.p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground">
-                  Join the community of professional tipsters. Get access to premium betting tips, in-depth analysis, and real-time predictions.
+                  Join the elite community of winning tipsters. Get daily predictions, statistical insights, and maximize your betting success.
                 </motion.p>
 
                 <motion.form action="" className="mt-12 mx-auto max-w-sm">
@@ -67,14 +66,14 @@ export function HeroSection() {
                     <Mail className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
 
                     <input
-                      placeholder="Enter your email"
+                      placeholder="Enter your email for tips"
                       className="h-12 w-full bg-transparent pl-12 focus:outline-none"
                       type="email"
                     />
 
                     <div className="md:pr-1.5 lg:pr-0">
                       <Button aria-label="submit" size="sm" className="rounded-[0.5rem]">
-                        <span className="hidden md:block">Get Premium Access</span>
+                        <span className="hidden md:block">Get Free Tips</span>
                         <SendHorizontal className="relative mx-auto size-5 md:hidden" strokeWidth={2} />
                       </Button>
                     </div>
@@ -84,35 +83,35 @@ export function HeroSection() {
                 <motion.div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   <StatsCard
                     icon={<TrendingUp className="size-5" />}
-                    title="92% Success Rate"
-                    description="Proven track record of successful predictions"
+                    title="85% Win Rate"
+                    description="Consistently accurate football predictions"
                   />
                   <StatsCard
                     icon={<Trophy className="size-5" />}
-                    title="€150k+ Profit"
-                    description="Total member profits in the last month"
+                    title="€200k+ Profit"
+                    description="Total community winnings this season"
                   />
                   <StatsCard
                     icon={<Users className="size-5" />}
-                    title="10k+ Members"
-                    description="Active premium subscribers worldwide"
+                    title="15k+ Members"
+                    description="Growing community of winning bettors"
                   />
                 </motion.div>
 
                 <motion.div className="mt-20">
-                  <h2 className="text-2xl font-semibold mb-8">Latest Premium Tips</h2>
+                  <h2 className="text-2xl font-semibold mb-8">Today's Top Predictions</h2>
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <TipCard
-                      match="Manchester City vs Arsenal"
-                      prediction="Over 2.5 Goals"
-                      confidence={95}
-                      odds={1.85}
+                      match="Liverpool vs Manchester United"
+                      prediction="Liverpool Win & Over 2.5"
+                      confidence={92}
+                      odds={2.05}
                     />
                     <TipCard
-                      match="Real Madrid vs Barcelona"
-                      prediction="Real Madrid to Win"
-                      confidence={88}
-                      odds={2.10}
+                      match="PSG vs Bayern Munich"
+                      prediction="Both Teams to Score"
+                      confidence={89}
+                      odds={1.75}
                     />
                   </div>
                 </motion.div>
