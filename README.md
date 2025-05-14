@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+# Shadcn Admin Dashboard
 
-## Project info
+Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.
 
-**URL**: https://lovable.dev/projects/27338c68-4fa4-4e9a-a3ae-17ef0abe0a03
+![alt text](public/images/shadcn-admin.png)
 
-## How can I edit this code?
+I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.
 
-There are several ways of editing your application.
+> This is not a starter project (template) though. I'll probably make one in the future.
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/27338c68-4fa4-4e9a-a3ae-17ef0abe0a03) and start prompting.
+- Light/dark mode
+- Responsive
+- Accessible
+- With built-in Sidebar component
+- Global Search Command
+- 10+ pages
+- Extra custom components
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+**UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Build Tool:** [Vite](https://vitejs.dev/)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Routing:** [TanStack Router](https://tanstack.com/router/latest)
 
-Follow these steps:
+**Type Checking:** [TypeScript](https://www.typescriptlang.org/)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Linting/Formatting:** [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**Icons:** [Tabler Icons](https://tabler.io/icons)
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Run Locally
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+Clone the project
+
+```bash
+  git clone https://github.com/satnaing/shadcn-admin.git
 ```
 
-**Edit a file directly in GitHub**
+Go to the project directory
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+  cd shadcn-admin
+```
 
-**Use GitHub Codespaces**
+Install dependencies
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+  pnpm install
+```
 
-## What technologies are used for this project?
+Start the server
 
-This project is built with:
+```bash
+  pnpm run dev
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Author
 
-## How can I deploy this project?
+Crafted with 🤍 by [@satnaing](https://github.com/satnaing)
 
-Simply open [Lovable](https://lovable.dev/projects/27338c68-4fa4-4e9a-a3ae-17ef0abe0a03) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
