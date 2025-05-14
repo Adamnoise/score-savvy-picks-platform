@@ -39,13 +39,12 @@ export function AnimatedGroup({ children, variants, className }: AnimatedGroupPr
   // Map children to motion.div with variants
   const animatedChildren = React.Children.map(children, (child, index) => {
     if (React.isValidElement(child)) {
-      // Fix the type issue by using proper type casting
-      return React.cloneElement(child, {
-        ...child.props,
-        as: motion.div,
-        variants: itemVariants,
-        key: index,
-      });
+      // Create a motion component with the child's props
+      return (
+        <motion.div key={index} variants={itemVariants}>
+          {child}
+        </motion.div>
+      );
     }
     return child;
   });

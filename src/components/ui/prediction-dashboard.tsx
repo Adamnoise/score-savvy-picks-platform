@@ -1,7 +1,6 @@
-
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Filter, ChevronLeft, ChevronRight, Globe, Trophy, FileDown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,7 +20,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export interface Team {
   id: string;
@@ -74,7 +72,7 @@ export function PredictionDashboard({
   onExport = () => {}
 }: PredictionDashboardProps) {
   const [matches, setMatches] = useState<Match[]>(initialMatches);
-  const [stats, setStats] = useState<UserStats>(initialStats);
+  const [stats] = useState<UserStats>(initialStats);
   const [date, setDate] = useState<Date>(new Date());
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [timeZone, setTimeZone] = useState("GMT");
