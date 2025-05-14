@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { format } from "date-fns";
-import { Calendar as CalendarIcon, Filter, ChevronLeft, ChevronRight, Globe, Trophy, FileDown } from "lucide-react";
+import { Calendar as CalendarIcon, Filter, ChevronLeft, ChevronRight, Globe, FileDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -71,7 +71,7 @@ export function PredictionDashboard({
   onDateChange = () => {},
   onExport = () => {}
 }: PredictionDashboardProps) {
-  const [matches, setMatches] = useState<Match[]>(initialMatches);
+  const [matches] = useState<Match[]>(initialMatches);
   const [stats] = useState<UserStats>(initialStats);
   const [date, setDate] = useState<Date>(new Date());
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);

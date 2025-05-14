@@ -1,7 +1,7 @@
 
 "use client";
 
-import { PredictionDashboard } from "@/components/ui/prediction-dashboard";
+import { PredictionDashboard, Match, UserStats } from "@/components/ui/prediction-dashboard";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -10,65 +10,69 @@ export default function PredictionsPage() {
   const { toast } = useToast();
   
   // Sample data - in a real application, this would come from an API
-  const sampleMatches = [
+  const sampleMatches: Match[] = [
     {
       id: "match-1",
+      date: new Date(),
       homeTeam: {
         id: "team-1",
         name: "Arsenal",
-        logo: "/placeholder.svg", // Replace with actual team logo
-        recentResults: ["W", "W", "D", "L", "W"] as Array<"W" | "D" | "L">
+        logo: "/placeholder.svg"
       },
       awayTeam: {
         id: "team-2",
         name: "Chelsea",
-        logo: "/placeholder.svg", // Replace with actual team logo
-        recentResults: ["L", "W", "W", "D", "W"] as Array<"W" | "D" | "L">
+        logo: "/placeholder.svg"
       },
-      startTime: new Date(),
-      league: "Premier League"
+      prediction: "Home Win",
+      odds: 1.75,
+      status: 'upcoming',
+      sport: "Soccer"
     },
     {
       id: "match-2",
+      date: new Date(),
       homeTeam: {
         id: "team-3",
         name: "Barcelona",
-        logo: "/placeholder.svg", // Replace with actual team logo
-        recentResults: ["W", "W", "W", "D", "W"] as Array<"W" | "D" | "L">
+        logo: "/placeholder.svg"
       },
       awayTeam: {
         id: "team-4",
         name: "Real Madrid",
-        logo: "/placeholder.svg", // Replace with actual team logo
-        recentResults: ["W", "W", "D", "W", "W"] as Array<"W" | "D" | "L">
+        logo: "/placeholder.svg"
       },
-      startTime: new Date(),
-      league: "La Liga"
+      prediction: "Draw",
+      odds: 3.5,
+      status: 'upcoming',
+      sport: "Soccer"
     },
     {
       id: "match-3",
+      date: new Date(),
       homeTeam: {
         id: "team-5",
         name: "Bayern Munich",
-        logo: "/placeholder.svg", // Replace with actual team logo
-        recentResults: ["W", "D", "W", "W", "L"] as Array<"W" | "D" | "L">
+        logo: "/placeholder.svg"
       },
       awayTeam: {
         id: "team-6",
         name: "Dortmund",
-        logo: "/placeholder.svg", // Replace with actual team logo
-        recentResults: ["L", "W", "D", "W", "W"] as Array<"W" | "D" | "L">
+        logo: "/placeholder.svg"
       },
-      startTime: new Date(),
-      league: "Bundesliga"
+      prediction: "Away Win",
+      odds: 2.25,
+      status: 'upcoming',
+      sport: "Soccer"
     }
   ];
   
-  const userStats = {
+  const userStats: UserStats = {
     totalPredictions: 145,
-    correctPredictions: 87,
-    winRate: 60,
-    currentStreak: { type: "win" as const, count: 3 }
+    successRate: 60,
+    profitLoss: 230.5,
+    streak: 3,
+    bestSport: "Soccer"
   };
   
   const handleLogin = () => {
@@ -87,7 +91,7 @@ export default function PredictionsPage() {
     });
   };
   
-  const handlePredictionSubmit = (matchId: string, prediction: "home" | "draw" | "away") => {
+  const handlePredictionSubmit = (matchId: string, prediction: string) => {
     console.log(`Prediction submitted for match ${matchId}: ${prediction}`);
     toast({
       title: "Prediction Submitted",
@@ -111,10 +115,6 @@ export default function PredictionsPage() {
       <PredictionDashboard 
         initialMatches={sampleMatches}
         initialStats={userStats}
-        isLoggedIn={isLoggedIn}
-        onLogin={handleLogin}
-        onRegister={handleRegister}
-        onPredictionSubmit={handlePredictionSubmit}
         onExport={handleExport}
       />
     </div>
