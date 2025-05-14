@@ -1,11 +1,12 @@
 
 import { useEffect } from 'react'
-import { useNavigate, useRouteError } from '@tanstack/react-router'
+import { useNavigate, useRouter } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
 
 export default function GeneralError() {
-  const error = useRouteError()
+  const router = useRouter()
   const navigate = useNavigate()
+  const error = router.state.errorNavigation?.error
 
   useEffect(() => {
     console.error('Route Error:', error)
