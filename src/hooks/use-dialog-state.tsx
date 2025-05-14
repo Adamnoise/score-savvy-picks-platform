@@ -1,18 +1,18 @@
+
 import { useState } from 'react'
 
-/**
- * Custom hook for confirm dialog
- * @param initialState string | null
- * @returns A stateful value, and a function to update it.
- * @example const [open, setOpen] = useDialogState<"approve" | "reject">()
- */
-export default function useDialogState<T extends string | boolean>(
-  initialState: T | null = null
-) {
-  const [open, _setOpen] = useState<T | null>(initialState)
+export function useDialogState(defaultOpen = false) {
+  const [isOpen, setOpen] = useState(defaultOpen)
 
-  const setOpen = (str: T | null) =>
-    _setOpen((prev) => (prev === str ? null : str))
+  const open = () => setOpen(true)
+  const close = () => setOpen(false)
+  const toggle = () => setOpen(!isOpen)
 
-  return [open, setOpen] as const
+  return {
+    isOpen,
+    setOpen,
+    open,
+    close,
+    toggle,
+  }
 }
